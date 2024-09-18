@@ -12,6 +12,8 @@ body {
   left: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .navbar a {
@@ -55,11 +57,22 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
 }
 .input-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 label {
@@ -68,7 +81,7 @@ label {
 }
 
 select {
-  width: 300px;
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   margin-right: 20px;
@@ -103,4 +116,33 @@ th {
 
 tbody tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+@media screen and (max-width: 768px) {
+  .input-group {
+    grid-template-columns: 1fr; /* Empilha os itens em telas menores */
+  }
+
+  select {
+    width: 100%; /* Ocupa toda a largura em telas menores */
+  }
+
+  label {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .navbar .logo {
+    height: 30px;
+  }
+
+  select {
+    width: 100%; /* Largura completa em telas muito pequenas */
+  }
 }
