@@ -12,21 +12,17 @@ body {
   left: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .navbar a {
-  float: left;
   display: block;
   color: white;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
   font-size: 17px;
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 
 .navbar a:hover {
@@ -47,52 +43,66 @@ body {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
   margin: 0;
-  padding-top: 50px;
+  padding-top: 100px;
   box-sizing: border-box;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  flex-direction: column;
+  max-width: 1000px;
 }
 .input-group {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
 }
 .input-item{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: calc(30% - 10px);
 }
 
 label {
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 select {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
-  margin-right: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+button#adicionar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button#adicionar:hover {
+  background-color: orange;
+}
+
 table {
   border-collapse: collapse;
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 20px;
   font-size: 18px;
   background-color: white;
 }
@@ -119,16 +129,10 @@ tbody tr:nth-child(even) {
 }
 @media screen and (max-width: 768px) {
   .input-group {
-    grid-template-columns: 1fr; /* Empilha os itens em telas menores */
+    gap: 10px;
   }
-
-  select {
-    width: 100%; /* Ocupa toda a largura em telas menores */
-  }
-
-  label {
-    margin-right: 0;
-    margin-bottom: 10px;
+  .input-item {
+    width: calc(50% - 10px); /* Ajusta a largura dos selects em telas menores */
   }
 }
 
@@ -142,7 +146,13 @@ tbody tr:nth-child(even) {
     height: 30px;
   }
 
-  select {
-    width: 100%; /* Largura completa em telas muito pequenas */
+  .input-item {
+    width: 100%; /* Selects em colunas para telas muito pequenas */
   }
+}
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -18,56 +18,69 @@
     <div class="container">
       <div class="input-group">
         <div class="input-item">
-          <label for="funcao"> Função</label>
+          <label for="funcao">Funções</label>
           <select id="funcao">
             <option value="" disabled selected>Selecione uma função...</option>
-            <option value="Gerente">Auxiliar de Serviços Gerais</option>
-            <option value="Analista">Vigilante Armado</option>
-            <option value="Desenvolvedor">Vigilante</option>
+            <option value="ASG">Auxiliar de Serviços Gerais</option>
+            <option value="Vigilante">Vigilante</option>
+            <option value="Porteiro">Porteiro</option>
           </select>
         </div>
         <div class="input-item">
-          <label for="funcao2"> Função 2</label>
+          <label for="funcao2">Quantidade</label>
           <select id="funcao2">
-            <option value="" disabled selected>Selecione uma função...</option>
-            <option value="Gerente">Auxiliar de Serviços Gerais</option>
-            <option value="Analista">Vigilante Armado</option>
-            <option value="Desenvolvedor">Vigilante</option>
+            <option value="" disabled selected>Selecione a quantidade</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </div>
         <div class="input-item">
-          <label for="funcao3">Função 3</label>
+          <label for="funcao3">Hora inicial</label>
           <select id="funcao3">
-            <option value="" disabled selected>Selecione uma função...</option>
-            <option value="Gerente">Auxiliar de Serviços Gerais</option>
-            <option value="Analista">Vigilante Armado</option>
-            <option value="Desenvolvedor">Vigilante</option>
+            <option value="" disabled selected>horários...</option>
+            <option value="06:00h">06:00h</option>
+            <option value="07:00h">07:00h</option>
+            <option value="08:00h">08:00h</option>
           </select>
         </div>
         <div class="input-item">
-          <label for="funcao4">Função 4</label>
+          <label for="funcao4">Hora final</label>
           <select id="funcao4">
-            <option value="" disabled selected>Selecione uma função...</option>
-            <option value="Gerente">Auxiliar de Serviços Gerais</option>
-            <option value="Analista">Vigilante Armado</option>
-            <option value="Desenvolvedor">Vigilante</option>
+            <option value="" disabled selected>horários...</option>
+            <option value="16:00h">16:00h</option>
+            <option value="17:00h">17:00h</option>
+            <option value="18:00h">18:00h</option>
+          </select>
+        </div>
+        <div class="input-item">
+          <label for="funcao5">Escala</label>
+          <select id="funcao5">
+            <option value="" disabled selected>escalas...</option>
+            <option value="5x2">5x2</option>
+            <option value="6x1">6x1</option>
+            <option value="12x36">12x36</option>
           </select>
         </div>
       </div>
-    </div>
-    <button id="adicionar">Adicionar à tabela</button>
-    <div class="container">
-      <table id="tabela" style="margin-top: 20px">
-        <thead>
-          <tr>
-            <th>produto</th>
-            <th>quantidade</th>
-            <th>escala</th>
-            <th>calendário</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+
+      <button id="adicionar">Adicionar à tabela</button>
+
+      <div class="table-container">
+        <table id="tabela" style="margin-top: 20px">
+          <thead>
+            <tr>
+              <th>produto</th>
+              <th>quantidade</th>
+              <th>horário.i</th>
+              <th>horário.f</th>
+              <th>escala</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button id="exportarCsv" style="margin-top: 20px;">Exportar CSV</button>
     </div>
     <script src="script.js"></script>
   </body>
