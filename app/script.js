@@ -17,23 +17,6 @@ document.getElementById('adicionar').addEventListener('click',function(){
 });
 
 //Script para exportar a tabela para o arquivo csv 
-document.getElementById('adicionar').addEventListener('click', function() {
-    const funcao1 = document.getElementById('funcao').value;
-    const funcao2 = document.getElementById('funcao2').value;
-    const funcao3 = document.getElementById('funcao3').value;
-    const funcao4 = document.getElementById('funcao4').value;
-    const funcao5 = document.getElementById('funcao5').value;
-
-    if (funcao1 && funcao2 && funcao3 && funcao4) {
-        const tabelaBody = document.querySelector('#tabela tbody');
-        const novaLinha = document.createElement('tr');
-        novaLinha.innerHTML = `<td>${funcao1}</td><td>${funcao2}</td><td>${funcao3}</td><td>${funcao4}</td><td>${funcao5}</td>`;
-        tabelaBody.appendChild(novaLinha);
-    } else {
-        alert('Por favor, selecione todas as funções.');
-    }
-});
-
 document.getElementById('exportarCsv').addEventListener('click', function() {
     const tabela = document.getElementById('tabela');
     const rows = tabela.querySelectorAll('tr');
