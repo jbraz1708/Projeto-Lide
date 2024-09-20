@@ -5,20 +5,18 @@ document.getElementById("adicionar").addEventListener("click", function () {
   const funcao3 = document.getElementById("funcao3").value;
   const funcao4 = document.getElementById("funcao4").value;
   const funcao5 = document.getElementById("funcao5").value;
-  
   //Condição para preencher a tabela
   if (funcao1 && funcao2 && funcao3 && funcao4) {
     const tabelaBody = document.querySelector("#tabela tbody");
     const novaLinha = document.createElement("tr");
     novaLinha.innerHTML = `<td>${funcao1}</td><td>${funcao2}</td><td>${funcao3}</td><td>${funcao4}</td><td>${funcao5}</td>`;
     tabelaBody.appendChild(novaLinha);
-    
-    // limpar o select
-    document.getElementById("funcao").selectedIndex = 0;
-    document.getElementById("funcao2").selectedIndex = 0;
-    document.getElementById("funcao3").selectedIndex = 0;
-    document.getElementById("funcao4").selectedIndex = 0;
-    document.getElementById("funcao5").selectedIndex = 0;
+
+    // looping para atualizar o select
+    const selectIds = ["funcao", "funcao2", "funcao3", "funcao4", "funcao5"];
+    selectIds.forEach(function (id) {
+      document.getElementById(id).selectedIndex = 0;
+    });
   } else {
     alert("Por Favor, selecione todas as funções.");
   }
